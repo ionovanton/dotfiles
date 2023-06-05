@@ -1,7 +1,5 @@
 local cmp = require "cmp"
 
--- dofile(vim.g.base46_cache .. "cmp")
-
 local cmp_ui = {
   icons = true,
   lspkind_text = true,

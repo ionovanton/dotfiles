@@ -23,6 +23,7 @@ local opts = {
       not_loaded = "",
     },
   },
+  build = ":Lazy update",
   performance = {
     rtp = {
       disabled_plugins = {
