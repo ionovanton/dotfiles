@@ -1,3 +1,4 @@
-opts = {}
+local lspconfig = require "lspconfig"
+local gopls_opts = require "lsp.gopls"
 
-return opts
+lspconfig.gopls.setup(gopls_opts)

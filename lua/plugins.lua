@@ -49,15 +49,6 @@ local plugins = {
     end,
   },
   {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "gopls",
-      },
-    },
-    build = ":MasonUpdate"
-  },
-  {
     "catppuccin/nvim",
     lazy = true,
     name = "catppuccin",
@@ -70,7 +61,7 @@ local plugins = {
               dark = "mocha",
           },
           transparent_background = false,
-          -- show_end_of_buffer = false, -- show the '~' characters after the end of buffers
+          show_end_of_buffer = false,
           term_colors = false,
           dim_inactive = {
               enabled = false,
@@ -101,9 +92,6 @@ local plugins = {
               gitsigns = true,
               nvimtree = true,
               telescope = true,
-              -- notify = false,
-              -- mini = false,
-              -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
           }, 
         }
       )
@@ -123,6 +111,21 @@ local plugins = {
     opts = {
       colorscheme = "catppuccin"
     },
+  },
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "gopls",
+      },
+    },
+    build = ":MasonUpdate",
+  },
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require "lsp.lspconfig"
+    end,
   },
 }
 

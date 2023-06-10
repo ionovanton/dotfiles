@@ -1,5 +1,3 @@
-local util = require "util"
-
 local opts = {
   default_config = {
     cmd = { 'gopls' },
