@@ -1,3 +1,5 @@
+local keymap = vim.keymap.set
+
 local plugins = {
   {
     "hrsh7th/nvim-cmp",
@@ -98,15 +100,6 @@ local plugins = {
     end,
   },
   {
-    'nvim-tree/nvim-tree.lua',
-    opts = function()
-      return require "config.nvimtree"
-    end,
-    config = function(_, opts)
-      require('nvim-tree').setup(opts)
-    end,
-  },
-  {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "catppuccin"
@@ -117,15 +110,28 @@ local plugins = {
     opts = {
       ensure_installed = {
         "gopls",
+        "sumneko_lua",
       },
     },
     build = ":MasonUpdate",
   },
   {
+    'nvim-tree/nvim-tree.lua',
+    opts = function()
+      return require "config.nvimtree"
+    end,
+    config = function(_, opts)
+      require('nvim-tree').setup(opts)
+    end,
+  },
+  {
     "neovim/nvim-lspconfig",
     config = function()
-      require "lsp.lspconfig"
+      require "lspconfig"
     end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
   },
 }
 
