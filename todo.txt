@@ -1,0 +1,12 @@
+treesitter
+telescope
+tabs
+cmp
+  circled border
+cliboard provider
+diffview
+git things
+lua line
+indent blank line
+surround
+nvim-ts-rainbow
