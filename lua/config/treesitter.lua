@@ -1,13 +1,13 @@
 local opts = {
-  -- run = ":TSUpdate",
-  -- sync_install = false,
+  run = ":TSUpdate",
+  sync_install = false,
 	ensure_installed = { "go", },
-	-- auto_install = true,
+	auto_install = true,
 	highlight = {
 	  enable = true,
 	},
   indent = {
-    enabled = true,
+    enable = true,
   },
   incremental_selection = {
     enable = true,
