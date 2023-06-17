@@ -42,7 +42,6 @@ local plugins = {
         "hrsh7th/cmp-path",
       },
     },
-
     opts = function()
       return require "config.cmp"
     end,
@@ -54,74 +53,30 @@ local plugins = {
     "catppuccin/nvim",
     lazy = true,
     name = "catppuccin",
-    config = function()
-      require("catppuccin").setup(
-        {
-          flavour = "mocha",
-          background = {
-              light = "latte",
-              dark = "mocha",
-          },
-          transparent_background = false,
-          show_end_of_buffer = false,
-          term_colors = false,
-          dim_inactive = {
-              enabled = false,
-              shade = "dark",
-              percentage = 0.15,
-          },
-          no_italic = false,
-          no_bold = false,
-          no_underline = false,
-          styles = {
-              comments = { "italic" },
-              conditionals = { "italic" },
-              loops = {},
-              functions = {},
-              keywords = { "bold" },
-              strings = {},
-              variables = {},
-              numbers = {},
-              booleans = {},
-              properties = {},
-              types = {},
-              operators = {},
-          },
-          color_overrides = {},
-          custom_highlights = {},
-          integrations = {
-              cmp = true,
-              gitsigns = true,
-              nvimtree = true,
-              telescope = true,
-          }, 
-        }
-      )
+    opts = function()
+      return require "config.catppuccin"
+    end,
+    config = function(_, opts)
+      require("catppuccin").setup(opts)
     end,
   },
   {
     "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "catppuccin"
-    },
+    opts = function()
+      return require "config.lazyvim"
+    end,
   },
   {
     "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "gopls",
-        "sumneko_lua",
-      },
-    },
+    opts = function()
+      return require "config.mason"
+    end,
     build = ":MasonUpdate",
   },
   {
     'nvim-tree/nvim-tree.lua',
     opts = function()
       return require "config.nvimtree"
-    end,
-    config = function(_, opts)
-      require('nvim-tree').setup(opts)
     end,
   },
   {
@@ -138,6 +93,20 @@ local plugins = {
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
     end
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = function()
+      return require "config.telescope"
+    end,
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    tag = "0.1.1",
+  },
+  {
+    "akinsho/bufferline.nvim",
+    opts = function()
+      return require "config.bufferline"
+    end,
   },
 }
 
