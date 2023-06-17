@@ -1,15 +1,10 @@
-cliboard provider
-diffview
-git things
-lua line
-indent blank line
-surround
-nvim-ts-rainbow
 language driven options
 get cursor to the end of the line
-
+null-ls
 
 
 bindings:
   lsp config key
   telescope key
+  tabs
+  copy paste

@@ -2,6 +2,10 @@ local keymap = vim.keymap.set
 
 local plugins = {
   {
+    "nvim-tree/nvim-web-devicons",
+    name = "nvim-web-devicons",
+  },
+  {
     "hrsh7th/nvim-cmp",
     -- name  = "nvim-cmp",
     -- event = "InsertEnter",
@@ -49,6 +53,16 @@ local plugins = {
       require("cmp").setup(opts)
     end,
   },
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = function()
+      return require "config.catppuccin"
+    end,
+    config = function(_, opts)
+      require("catppuccin").setup(opts)
+    end,
+
+  }
   {
     "catppuccin/nvim",
     lazy = true,
@@ -107,6 +121,57 @@ local plugins = {
     opts = function()
       return require "config.bufferline"
     end,
+  },
+  {
+    "sindrets/diffview.nvim",
+    opts = function()
+      return require "config.diffview"
+    end,
+    dependencies = {
+      "nvim-web-devicons",
+    }
+  },
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = function()
+      return require "config.gitsigns"
+    end,
+  },
+  {
+    "akinsho/toggleterm.nvim",
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = function()
+      return require "config.lualine"
+    end,
+    config = function(_, opts)
+      return require("lualine").setup(opts)
+    end,
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    opts = function()
+      return require "config.blankline"
+    end,      
+  },
+  {
+    "kylechui/nvim-surround",
+    opts = function()
+      return require "config.surround"
+    end,
+  },
+  {
+    "folke/trouble.nvim",
+    dependencies = {
+      "nvim-web-devicons",
+    },
+    opts = function()
+      return require "config.trouble"
+    end,
+    -- config = function(_, opts)
+    --   return require("trouble").setup(opts)
+    -- end,
   },
 }
 
