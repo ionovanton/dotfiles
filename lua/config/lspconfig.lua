@@ -1,7 +1,7 @@
-mason = require "mason"
-lspconfig = require "lspconfig"
-util = require "lspconfig.util"
-gopls = require "config.gopls"
+local mason = require "mason"
+local lspconfig = require "lspconfig"
+local util = require "lspconfig.util"
+local gopls = require "config.gopls"
 
 local on_attach = function(_, _)
   vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition)

@@ -1,5 +1,3 @@
-local keymap = vim.keymap.set
-
 local plugins = {
   {
     "nvim-tree/nvim-web-devicons",
@@ -8,6 +6,20 @@ local plugins = {
   {
     "rafamadriz/friendly-snippets",
     name = "friendly-snippets",
+  },
+  {
+    "nvim-lua/plenary.nvim",
+    name = "plenary",
+  },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    opts = function()
+      return require "config.nullls"
+    end,
+    config = function(_, opts)
+      require("null-ls").setup(opts)
+    end,
+    requires = { "plenary", },
   },
   {
     "L3MON4D3/LuaSnip",
@@ -57,10 +69,10 @@ local plugins = {
   {
     "nvim-lualine/lualine.nvim",
     opts = function()
-      return require "config.catppuccin"
+      return require "config.lualine"
     end,
     config = function(_, opts)
-      require("catppuccin").setup(opts)
+      require("lualine").setup(opts)
     end,
   },
   {
@@ -139,6 +151,8 @@ local plugins = {
   },
   {
     "akinsho/toggleterm.nvim",
+    version = "*",
+    opts = require "config.toggleterm",
   },
   {
     "nvim-lualine/lualine.nvim",
