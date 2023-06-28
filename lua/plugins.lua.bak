@@ -1,29 +1,5 @@
 local plugins = {
   {
-    "L3MON4D3/LuaSnip",
-    name = "luasnip",
-    lazy = true,
-    dependencies = "friendly-snippets",
-    opts = function()
-      return require "config.luasnip"
-    end,
-    config = function(_, opts)
-      require("luasnip").setup(opts)
-    end,
-  },
-  {
-    "windwp/nvim-autopairs",
-    name = "autopairs",
-    opts = function()
-      return require "config.autopairs"
-    end,
-    config = function(_, opts)
-      require("nvim-autopairs").setup(opts)
-      local cmp_autopairs = require "nvim-autopairs.completion.cmp"
-      require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
-    end,
-  },
-  {
     "hrsh7th/nvim-cmp",
     -- name  = "nvim-cmp",
     -- event = "InsertEnter",

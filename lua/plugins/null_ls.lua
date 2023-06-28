@@ -1,4 +1,5 @@
 return {
   "jose-elias-alvarez/null-ls.nvim",
-  requires = { "plenary", },
+  name = "null_ls",
+  dependencies = { "plenary", },
 }

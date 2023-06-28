@@ -16,12 +16,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local opts = {
+  config = {
+    defaults = {
+      lazy = true,
+    },
+  },
   checker = { enabled = true },
   ui = {
     icons = {
       ft = "",
       lazy = "󰂠 ",
-      loaded = "",
+      load = "",
       not_loaded = "",
     },
   },

@@ -1,4 +1,4 @@
--- local cmp = require "cmp"
+local cmp = require "cmp"
 
 -- local cmp_ui = {
 --   icons = true,
@@ -117,4 +117,4 @@ local opts = {
   },
 }
 
-return opts
+cmp.setup(opts)
