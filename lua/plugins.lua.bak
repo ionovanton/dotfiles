@@ -1,27 +1,5 @@
 local plugins = {
   {
-    "nvim-tree/nvim-web-devicons",
-    name = "nvim-web-devicons",
-  },
-  {
-    "rafamadriz/friendly-snippets",
-    name = "friendly-snippets",
-  },
-  {
-    "nvim-lua/plenary.nvim",
-    name = "plenary",
-  },
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    opts = function()
-      return require "config.nullls"
-    end,
-    config = function(_, opts)
-      require("null-ls").setup(opts)
-    end,
-    requires = { "plenary", },
-  },
-  {
     "L3MON4D3/LuaSnip",
     name = "luasnip",
     lazy = true,

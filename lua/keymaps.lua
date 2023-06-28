@@ -1,9 +1,6 @@
 local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
 
--- Set leader
-vim.g.mapleader = ' '
-
 -- Disable arrow keys
 keymap("i", "<Up>", "<Nop>", opts)
 keymap("i", "<Left>", "<Nop>", opts)
