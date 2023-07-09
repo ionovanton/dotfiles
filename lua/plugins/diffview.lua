@@ -1,5 +1,5 @@
 return {
 	"sindrets/diffview.nvim",
 	name = "diffview",
-	dependencies = { "nvim_web_devicons", },
+	dependencies = { "nvim-web-devicons", },
 }

@@ -1,4 +1,4 @@
 return {
 	"rafamadriz/friendly-snippets",
-	name = "friendly_snippets",
+	name = "friendly-snippets",
 }

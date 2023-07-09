@@ -1,11 +1,26 @@
-redo cmp
 language driven options
-get cursor to the end of the line
+  go
 null-ls
+do not show filename in lualine for nvimtree
+toogle show tabs and spaces
+change the color of leading listchars characters from blue to gray
+keymap for navigation in insert mode
+figure out how to close buffers
+keymap for moving selected text horizontaly
+jump by words
+jump-delete
+!!!bufferline close current
+toggleterm for git
 
+snippets:
+  lua:
+    keymap
+
+setting up
+  telescope
+  cmp
 
 bindings:
   lsp config key
   telescope key
-  tabs
   copy paste

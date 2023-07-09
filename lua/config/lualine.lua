@@ -1,7 +1,7 @@
 require("lualine").setup({
-	requires = {
-	  "nvim_web_devicons",
-	  opt = true,
-	},
+  requires = {
+    "nvim-web-devicons",
+    opt = true,
+  },
 })
- 
+

@@ -1,6 +1,6 @@
 return {
   "hrsh7th/nvim-cmp",
-  name  = "nvim_cmp",
+  name  = "nvim-cmp",
   dependencies = {
     "luasnip",
     "autopairs",

@@ -1,4 +1,5 @@
 return {
-	"akinsho/bufferline.nvim",
+  "akinsho/bufferline.nvim",
   name = "bufferline",
+  dependencies = { "nvim-web-devicons", },
 }

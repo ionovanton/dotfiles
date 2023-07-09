@@ -1,4 +1,4 @@
-require("nvim-treesitter").setup({
+require("nvim-treesitter.configs").setup({
   run = ":TSUpdate",
   sync_install = false,
     ensure_installed = { "go", },

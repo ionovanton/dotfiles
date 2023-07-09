@@ -1,4 +1,4 @@
-local opts = {
+return {
   run = ":TSUpdate",
   sync_install = false,
 	ensure_installed = { "go", },
@@ -13,5 +13,3 @@ local opts = {
     enable = true,
   },
 }
-
-return opts
