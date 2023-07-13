@@ -1,3 +1,5 @@
+keymap = vim.keymap.set
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 vim.g.mapleader = " "
@@ -67,3 +69,4 @@ local opts = {
 }
 
 require("lazy").setup("plugins", opts)
+

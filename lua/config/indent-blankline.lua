@@ -6,7 +6,3 @@ require("indent_blankline").setup({
   show_current_context = true,
 })
 
--- Switch between buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-

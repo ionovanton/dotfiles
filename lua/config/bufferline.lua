@@ -17,3 +17,8 @@ require("bufferline").setup({
     show_buffer_icons = true,
   },
 })
+
+-- Switch between buffers
+keymap("n", "<S-l>", ":bnext<CR>", opts)
+keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<leader>blcc", ":bdelete %<CR>; :bnext<CR>")

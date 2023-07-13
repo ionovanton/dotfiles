@@ -5,12 +5,14 @@ do not show filename in lualine for nvimtree
 toogle show tabs and spaces
 change the color of leading listchars characters from blue to gray
 keymap for navigation in insert mode
-figure out how to close buffers
 keymap for moving selected text horizontaly
 jump by words
 jump-delete
-!!!bufferline close current
 toggleterm for git
+autoupdate of everything on startup
+i need some <CR> key hack because my hand si not there
+comment lines OUT!!!
+go back go forward between all buffers and lines (like in intellij)
 
 snippets:
   lua:
