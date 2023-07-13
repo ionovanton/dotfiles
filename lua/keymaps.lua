@@ -1,5 +1,3 @@
-local opts = { noremap = true, silent = true }
-
 -- Disable arrow keys
 keymap("i", "<Up>", "<Nop>", opts)
 keymap("i", "<Left>", "<Nop>", opts)
@@ -12,10 +10,6 @@ keymap("n", "<Right>", "<Nop>", opts)
 
 -- Clear highlights
 keymap("n", "<Esc>", ":noh <CR>", opts)
-
--- Switch between buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Shift text
 keymap("v", ">", "<gv", opts)
@@ -33,19 +27,11 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 
--- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
--- NvimTree
-keymap("n", "<C-n>", "<cmd> NvimTreeToggle <CR>", opts)
-keymap("n", "<leader>e", "<cmd> NvimTreeFocus <CR>", opts)
-
--- Test
-keymap("n", "<leader>abc", function() print("abc test lua") end, opts)
+-- -- Test
+-- keymap("n", "<leader>abc", function() print("abc test lua") end, opts)
 
 

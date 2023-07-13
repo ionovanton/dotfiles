@@ -1,5 +1,18 @@
-keymap = vim.keymap.set
 
+
+-- KEYMAPS
+local opts = { noremap = true, silent = true }
+
+keymap = function(mode, key, binding)
+  vim.keymap.set(mode, key, binding, opts)
+end
+
+keymap = function(mode, key, binding, options)
+  vim.keymap.set(mode, key, binding, options)
+end
+
+
+-- LAZY
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 vim.g.mapleader = " "
@@ -72,4 +85,3 @@ local opts = {
 }
 
 require("lazy").setup("plugins", opts)
-
