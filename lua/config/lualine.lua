@@ -3,5 +3,8 @@ require("lualine").setup({
     "nvim-web-devicons",
     opt = true,
   },
+  options = {
+    disabled_filetypes = { "NVimTree", },
+  },
 })
 
