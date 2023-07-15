@@ -1,5 +1,5 @@
 -- Disable arrow keys
-keymap("i", "<Up>", "<Nop>", opts)
+keymap("i", "<Up>", "<Nop>")
 keymap("i", "<Left>", "<Nop>", opts)
 keymap("i", "<Down>", "<Nop>", opts)
 keymap("i", "<Right>", "<Nop>", opts)
@@ -31,7 +31,5 @@ keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
--- -- Test
--- keymap("n", "<leader>abc", function() print("abc test lua") end, opts)
-
-
+-- Test
+keymap("n", "<leader>abc", function() print("abc test lua") end, opts)

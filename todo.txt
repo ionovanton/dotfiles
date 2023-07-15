@@ -10,9 +10,11 @@ jump by words
 jump-delete
 toggleterm for git
 autoupdate of everything on startup
-i need some <CR> key hack because my hand si not there
+i need some <CR> key hack because my hand is not there
 comment lines OUT!!!
 go back go forward between all buffers and lines (like in intellij)
+hook all help windows and close it on keybinding
+remember current buffer when go to nvimtree
 
 snippets:
   lua:

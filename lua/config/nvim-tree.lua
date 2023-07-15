@@ -65,4 +65,8 @@ keymap("n", "<leader>e", "<cmd> NvimTreeFocus <CR>", opts)
 
 require("nvim-tree").setup({
   on_attach = on_attach,
+  update_focused_file = {
+    enable = true,
+    update_root = false,
+  },
 })

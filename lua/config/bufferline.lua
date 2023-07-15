@@ -18,16 +18,26 @@ require("bufferline").setup({
   },
 })
 
-local function test_f()
-  local ft = vim.o.filetype
-  if (cmp(ft, "NvimTree")) then
-    return -- вернуть переход на правое окно
+local debug_log = require("utils").debug_log
+local wrap = require("utils").wrap
+
+local resolve = function(cmd)
+  ft = vim.o.filetype
+  if (ft == "NvimTree") then
+    debug_log("resolve :blast")
+    return ":blast"
   end
-  return ":bprevious<CR>" -- вернуть обычное поведение
+  debug_log("resolve cmd")
+  return cmd
 end
 
 -- Switch between buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<leader>blcc", ":bdelete %<CR>; :bnext<CR>", opts)
-keymap("n", "<leader>dd>", test_f)
+keymap("n", "<S-l>", wrap(resolve, ":bnext<CR>"), opts)
+keymap("n", "<S-h>", wrap(resolve, ":bprevious<CR>"), opts)
+keymap("n", "<leader>bcc", ":bdelete %<CR>; :bprevious<CR>", opts)
+keymap("n", "<leader>bco", ":bdelete %<CR>; :bnext<CR>", opts)
+-- keymap("n", "<leader>bcr", ":bdelete %<CR>; :bnext<CR>", opts)
+-- keymap("n", "<leader>bcl", ":bdelete %<CR>; :bnext<CR>", opts)
+-- keymap("n", "<leader>bcu", ":bdelete %<CR>; :bnext<CR>", opts)
+
+-- nvix...

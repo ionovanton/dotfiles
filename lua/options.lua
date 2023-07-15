@@ -33,7 +33,7 @@ local opts = {
     eol = '↴',
   },
   list = true,
-  termguicolors = true, -- for bufferline for some reason...
+  termguicolors = true,
 }
 
 vim.opt.shortmess:append "c"
