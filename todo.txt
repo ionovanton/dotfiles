@@ -15,6 +15,7 @@ comment lines OUT!!!
 go back go forward between all buffers and lines (like in intellij)
 hook all help windows and close it on keybinding
 remember current buffer when go to nvimtree
+indent blankline nice vertical character
 
 snippets:
   lua:

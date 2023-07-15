@@ -8,7 +8,7 @@ end
 
 M.wrap = function(func, ...)
   local args = {...}
-  M.debug_log(func)
+  M.debug_log("wrap")
   return function()
     func(unpack(args))
   end

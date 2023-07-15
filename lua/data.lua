@@ -1,1 +1,1 @@
-custom_debug = false
+custom_debug = true
