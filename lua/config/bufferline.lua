@@ -33,22 +33,25 @@ local resolve = function(cmd)
 end
 
 -- Switch between buffers
-keymap("n", "<S-l>", function()
+keymap("n", "<S-l>",
+function()
   if (vim.o.filetype == "NvimTree") then
-    return ":blast<CR>"
+    return ":b#<CR>"
   end
   return ":bnext<CR>"
 end, {silent = true, expr = true})
-keymap("n", "<S-h>", function()
+
+keymap("n", "<S-h>",
+function()
   if (vim.o.filetype == "NvimTree") then
-    return ":blast<CR>"
+    return ":b#<CR>"
   end
   return ":bprevious<CR>"
 end, {silent = true, expr = true})
-keymap("n", "<leader>bcc", ":bdelete %<CR>; :bprevious<CR>", opts)
-keymap("n", "<leader>bco", ":bdelete %<CR>; :bnext<CR>", opts)
--- keymap("n", "<leader>bcr", ":bdelete %<CR>; :bnext<CR>", opts)
--- keymap("n", "<leader>bcl", ":bdelete %<CR>; :bnext<CR>", opts)
--- keymap("n", "<leader>bcu", ":bdelete %<CR>; :bnext<CR>", opts)
 
--- nvix...
+-- Close buffers
+keymap("n", "<leader>bcc", ":bd % | :bnext<CR>", opts)
+keymap("n", "<leader>bco", ":BufferLineCloseOthers<CR>", opts)
+keymap("n", "<leader>bcr", ":BufferLineCloseRight<CR>", opts)
+keymap("n", "<leader>bcl", ":BufferLineCloseLeft<CR>", opts)
+-- keymap("n", "<leader>bcu", ":bdelete %<CR>; :bnext<CR>", opts) -- TODO: close unchanged

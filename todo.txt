@@ -16,6 +16,8 @@ go back go forward between all buffers and lines (like in intellij)
 hook all help windows and close it on keybinding
 remember current buffer when go to nvimtree
 indent blankline nice vertical character
+make a cron script to save your dotfiles (also for preserving pluging commit hashes)
+prevent switching tabs in help window (nvim_buf_del_keymap())
 
 snippets:
   lua:
