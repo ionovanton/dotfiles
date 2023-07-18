@@ -1,23 +1,21 @@
 language driven options
   go
 null-ls
-do not show filename in lualine for nvimtree
-toogle show tabs and spaces
-change the color of leading listchars characters from blue to gray
-keymap for navigation in insert mode
-keymap for moving selected text horizontaly
+change the color of leading listchars characters from blue to other
 jump by words
 jump-delete
 toggleterm for git
 autoupdate of everything on startup
+update history (update with release only)
 i need some <CR> key hack because my hand is not there
-comment lines OUT!!!
-go back go forward between all buffers and lines (like in intellij)
+!!!comment lines OUT
 hook all help windows and close it on keybinding
 remember current buffer when go to nvimtree
-indent blankline nice vertical character
+indent blankline settings
 make a cron script to save your dotfiles (also for preserving pluging commit hashes)
 prevent switching tabs in help window (nvim_buf_del_keymap())
+visual mode select for inserting braces around based on first brace
+
 
 snippets:
   lua:

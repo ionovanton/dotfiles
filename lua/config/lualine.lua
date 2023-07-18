@@ -4,6 +4,9 @@ require("lualine").setup({
     opt = true,
   },
   options = {
-    disabled_filetypes = { "NVimTree", },
+    disabled_filetypes = {
+      "NvimTree",
+      "TelescopePrompt",
+    },
   },
 })

@@ -36,7 +36,7 @@ end
 keymap("n", "<S-l>",
 function()
   if (vim.o.filetype == "NvimTree") then
-    return ":b#<CR>"
+    return "<C-w>p"
   end
   return ":bnext<CR>"
 end, {silent = true, expr = true})
@@ -44,7 +44,7 @@ end, {silent = true, expr = true})
 keymap("n", "<S-h>",
 function()
   if (vim.o.filetype == "NvimTree") then
-    return ":b#<CR>"
+    return "<C-w>p"
   end
   return ":bprevious<CR>"
 end, {silent = true, expr = true})

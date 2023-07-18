@@ -1,5 +1,7 @@
 local opts = {
   backup = false,
+  swapfile = false,
+  undofile = true,
   clipboard = "unnamedplus",
   number = true,
   completeopt = { "menuone", "noselect", },
@@ -10,18 +12,12 @@ local opts = {
   mouse = "",
   pumheight = 10,
   showmode = false,
-  showtabline = 2,
   smartcase = true,
   smartindent = true,
   splitbelow = true,
   splitright = true,
-  swapfile = false,
   timeoutlen = 500,
-  undofile = true,
   writebackup = false,
-  expandtab = true,
-  shiftwidth = 2,
-  tabstop = 2,
   cursorline = true,
   signcolumn = "yes",
   wrap = false,
@@ -34,6 +30,10 @@ local opts = {
   },
   list = true,
   termguicolors = true,
+  -- showtabline = 2,
+  -- expandtab = true,
+  -- shiftwidth = 2,
+  -- tabstop = 2,
 }
 
 vim.opt.shortmess:append "c"
