@@ -15,7 +15,11 @@ indent blankline settings
 make a cron script to save your dotfiles (also for preserving pluging commit hashes)
 prevent switching tabs in help window (nvim_buf_del_keymap())
 visual mode select for inserting braces around based on first brace
-
+reverse undo
+system for overriding tab/spaces/indentation/[other options] options (project-specific ---> language-specific ---> default)
+delete all trailing tabs/spaces in one backspace press (like in idea)
+!!!generelized array snipper for easier element inserting (also make editing possible)
+close help window fast
 
 snippets:
   lua:

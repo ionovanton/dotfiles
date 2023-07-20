@@ -1,6 +1,5 @@
 require "data"
 require "bootstrap"
-require "commands"
 require "config"
 require "keymaps"
 require "options"

@@ -45,7 +45,7 @@ keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 
 -- Move text horizontally
 keymap("v", "<A-l>", "xp`[v`]", opts)
-keymap("v", "<A-h>", "xhhp`[v`]", opts)
+keymap("v", "<A-h>", "xhp`[v`]", opts)
 keymap("n", "<A-l>", "vixp`[v`]", opts)
 keymap("n", "<A-h>", "vixhhp`[v`]", opts)
 keymap("i", "<A-l>", "<Esc>viwxp`[v`]", opts)

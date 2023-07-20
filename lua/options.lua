@@ -1,4 +1,40 @@
-local opts = {
+local autocmd = vim.api.nvim_create_autocmd
+local usercmd = vim.api.nvim_create_user_command
+local augroup = vim.api.nvim_create_augroup
+
+local set_vim_opts = function(t)
+  for k, v in pairs(t) do
+    vim.opt[k] = v
+  end
+end
+
+local tlc_toggle_func = function()
+	local tlc_on = {
+		tab = '→ ',
+		lead = '⋅',
+		eol = '↴',
+	}
+
+	local tlc_off = {
+		tab = '',
+		lead = '',
+		eol = '',
+	}
+
+	if (tlc_toggle == false) then
+		vim.opt[listchars] = tlc_on
+		tlc_toggle = true
+	else
+		vim.opt[listchars] = tlc_off
+		tlc_toggle = false
+	end
+end
+
+vim.opt.shortmess:append "c"
+vim.cmd "set whichwrap+=<,>,h,l,[,]" -- wrap move to the next line
+
+-- Default vim options
+local default_opts = {
   backup = false,
   swapfile = false,
   undofile = true,
@@ -23,22 +59,46 @@ local opts = {
   wrap = false,
   scrolloff = 8,
   sidescrolloff = 8,
-  listchars = {
-    tab = '→ ',
-    lead = '⋅',
-    eol = '↴',
-  },
   list = true,
   termguicolors = true,
-  -- showtabline = 2,
-  -- expandtab = true,
-  -- shiftwidth = 2,
-  -- tabstop = 2,
+  showtabline = 2, -- show opened tabs (pages) on top of the screen
+  expandtab = true, -- convert tabs to spaces
+  shiftwidth = 2,
+  tabstop = 2,
 }
 
-vim.opt.shortmess:append "c"
-vim.cmd "set whichwrap+=<,>,h,l,[,]" -- wrap move to the next line
+-- Option overriding
+augroup("LanguageSettings", {})
+augroup("ProjectSettings", {})
 
-for k, v in pairs(opts) do
-  vim.opt[k] = v
+local custom_opts = {
+	{
+		name = "FileType",
+		group = "LanguageSettings",
+		default = false,
+		pattern = { '*.xml', '*.html', '*.xhtml', '*.css', '*.scss', '*.javascript', '*.typescript', '*.yaml', '*.lua' },
+    vim_opts = {
+      expandtab = true,
+      shiftwidth = 8,
+      tabstop = 8,
+    },
+    callback = function()
+      print("this peace of crap doesnt work for some reason")
+    end,
+	},
+}
+
+-- Execute
+set_vim_opts(default_opts)
+
+for _, t in ipairs(custom_opts) do
+  if (t.default == false) then
+    autocmd(t.name, {
+      group = "LanguageSettings",
+      pattern = t.pattern,
+      callback = t.callback
+    })
+  end
 end
+
+

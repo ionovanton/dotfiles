@@ -15,7 +15,6 @@ end
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 vim.g.mapleader = " "
-
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
