@@ -94,7 +94,7 @@ set_vim_opts(default_opts)
 for _, t in ipairs(custom_opts) do
   if (t.default == false) then
     autocmd(t.name, {
-      group = "LanguageSettings",
+      group = t.group,
       pattern = t.pattern,
       callback = t.callback
     })
