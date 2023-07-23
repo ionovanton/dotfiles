@@ -73,17 +73,20 @@ augroup("ProjectSettings", {})
 
 local custom_opts = {
 	{
-		name = "FileType",
+    name = "FileType",
 		group = "LanguageSettings",
 		default = false,
-		pattern = { '*.xml', '*.html', '*.xhtml', '*.css', '*.scss', '*.javascript', '*.typescript', '*.yaml', '*.lua' },
-    vim_opts = {
-      expandtab = true,
-      shiftwidth = 8,
-      tabstop = 8,
-    },
-    callback = function()
-      print("this peace of crap doesnt work for some reason")
+		pattern = "*.lua, *.c",
+    callback = function(ev)
+      local vim_opts = {
+        expandtab = true,
+        shiftwidth = 2,
+        tabstop = 2,
+      }
+      for k, v in pairs(vim_opts) do
+        vim.opt[k] = v
+      end
+      print("lang: " .. ev.match)
     end,
 	},
 }
@@ -96,7 +99,7 @@ for _, t in ipairs(custom_opts) do
     autocmd(t.name, {
       group = t.group,
       pattern = t.pattern,
-      callback = t.callback
+      callback = t.callback,
     })
   end
 end
