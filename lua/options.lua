@@ -8,27 +8,29 @@ local set_vim_opts = function(t)
   end
 end
 
-local tlc_toggle_func = function()
-	local tlc_on = {
-		tab = '→ ',
-		lead = '⋅',
-		eol = '↴',
-	}
+vim.keymap.set("n", "<leader>tlc", function()
+  local tlc_on = {
+    tab = '→ ',
+    lead = '⋅',
+    eol = '↴',
+  }
 
-	local tlc_off = {
-		tab = '',
-		lead = '',
-		eol = '',
-	}
+  local tlc_off = {
+    tab = '',
+    lead = '',
+    eol = '',
+  }
 
-	if (tlc_toggle == false) then
-		vim.opt[listchars] = tlc_on
-		tlc_toggle = true
-	else
-		vim.opt[listchars] = tlc_off
-		tlc_toggle = false
-	end
-end
+  print("it works tlc")
+
+  if (tlc_toggle == false) then
+    vim.opt["listchars"] = tlc_on
+    tlc_toggle = true
+  else
+    vim.opt["listchars"] = nil
+    tlc_toggle = false
+  end
+end, { noremap = true, silent = true })
 
 vim.opt.shortmess:append "c"
 vim.cmd "set whichwrap+=<,>,h,l,[,]" -- wrap move to the next line
@@ -62,7 +64,7 @@ local default_opts = {
   list = true,
   termguicolors = true,
   showtabline = 2, -- show opened tabs (pages) on top of the screen
-  expandtab = true, -- convert tabs to spaces
+  expandtab = true, -- convert tabs to spaces when pressed
   shiftwidth = 2,
   tabstop = 2,
 }
@@ -76,7 +78,7 @@ local custom_opts = {
     name = "FileType",
 		group = "LanguageSettings",
 		default = false,
-		pattern = "*.lua, *.c",
+		pattern = "*.lua",
     callback = function(ev)
       local vim_opts = {
         expandtab = true,
@@ -91,9 +93,10 @@ local custom_opts = {
 	},
 }
 
--- Execute
+-- Default options
 set_vim_opts(default_opts)
 
+-- Custom options
 for _, t in ipairs(custom_opts) do
   if (t.default == false) then
     autocmd(t.name, {
