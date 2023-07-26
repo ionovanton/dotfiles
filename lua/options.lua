@@ -8,32 +8,21 @@ local set_vim_opts = function(t)
   end
 end
 
-vim.keymap.set("n", "<leader>tlc", function()
-  local tlc_on = {
-    tab = '→ ',
-    lead = '⋅',
-    eol = '↴',
-  }
-
-  local tlc_off = {
-    tab = '',
-    lead = '',
-    eol = '',
-  }
-
-  print("it works tlc")
-
-  if (tlc_toggle == false) then
-    vim.opt["listchars"] = tlc_on
-    tlc_toggle = true
-  else
-    vim.opt["listchars"] = nil
-    tlc_toggle = false
-  end
-end, { noremap = true, silent = true })
-
+-- I don't know what this one does
 vim.opt.shortmess:append "c"
-vim.cmd "set whichwrap+=<,>,h,l,[,]" -- wrap move to the next line
+
+-- Wrap move to the next line
+vim.cmd "set whichwrap+=<,>,h,l,[,]"
+
+-- Disable autocomment on next line for all buffers
+autocmd("BufEnter", {
+  pattern = "*",
+  command = "set fo-=c fo-=r fo-=o",
+})
+
+-- Smart hungry backspace
+-- TODO
+
 
 -- Default vim options
 local default_opts = {
@@ -74,12 +63,12 @@ augroup("LanguageSettings", {})
 augroup("ProjectSettings", {})
 
 local custom_opts = {
-	{
+  {
     name = "FileType",
-		group = "LanguageSettings",
-		default = false,
-		pattern = "*.lua",
-    callback = function(ev)
+    group = "LanguageSettings",
+    default = false,
+    pattern = "lua",
+    callback = function(_)
       local vim_opts = {
         expandtab = true,
         shiftwidth = 2,
@@ -88,9 +77,8 @@ local custom_opts = {
       for k, v in pairs(vim_opts) do
         vim.opt[k] = v
       end
-      print("lang: " .. ev.match)
     end,
-	},
+  },
 }
 
 -- Default options
@@ -106,5 +94,4 @@ for _, t in ipairs(custom_opts) do
     })
   end
 end
-
 

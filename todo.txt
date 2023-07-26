@@ -2,21 +2,19 @@ language driven options
   go
 null-ls
 change the color of leading listchars characters from blue to other
-jump by words
 jump-delete
 toggleterm for git
 autoupdate of everything on startup
-update history (update with release only)
-i need some <CR> key hack because my hand is not there
-hook all help windows and close it on keybinding
-make a cron script to save your dotfiles (also for preserving pluging commit hashes)
 prevent switching tabs in help window (nvim_buf_del_keymap())
 visual mode select for inserting braces around based on first brace
 system for overriding tab/spaces/indentation/[other options] options (project-specific ---> language-specific ---> default)
-delete all trailing tabs/spaces in one backspace press (like in idea)
 !!!generelized array snippet for easier element inserting (also make editing possible)
 close help window fast
-prevent autocomment next line
+remap fowrard and backwards buffer jump
+!!! remove nvimtree from jumplist
+smart hungry backspace (very hard problem)
+portal-nvim instead of vim's jumplist + go backwards motions
+insert eol from normal mode
 
 snippets:
   lua:

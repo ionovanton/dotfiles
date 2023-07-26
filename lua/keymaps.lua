@@ -46,10 +46,36 @@ keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 -- Move text horizontally
 keymap("v", "<A-l>", "xp`[v`]", opts)
 keymap("v", "<A-h>", "xhp`[v`]", opts)
-keymap("n", "<A-l>", "vixp`[v`]", opts)
-keymap("n", "<A-h>", "vixhhp`[v`]", opts)
-keymap("i", "<A-l>", "<Esc>viwxp`[v`]", opts)
-keymap("i", "<A-h>", "<Esc>viwxhhp`[v`]", opts)
+
+-- Toggle trailing characters
+keymap("n", "<leader>tlc", function()
+  local tlc_on = {
+    tab = '→ ',
+    lead = '⋅',
+    eol = '↴',
+  }
+
+  local tlc_off = {
+    tab = '',
+    lead = '',
+    eol = '',
+  }
+
+  if (tlc_toggle == false) then
+    vim.opt["listchars"] = tlc_on
+    tlc_toggle = true
+  else
+    vim.opt["listchars"] = nil
+    tlc_toggle = false
+  end
+end, { noremap = true, silent = true })
+
+-- Buffer jumping 
+-- (this will not work due to different workspaces, it will be mixed up. Every jump list should be separated in different sessions)
+-- vim.cmd(":nnoremap <A-h> <C-o>")
+-- vim.cmd(":nnoremap <A-l> <C-i>")
 
 -- Test
-keymap("n", "<leader>ttt", function() require("test") end, opts)
+keymap("n", "<leader>ttt", function() require("test") end, opts) -- TODO: fix
+
+
