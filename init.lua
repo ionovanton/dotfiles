@@ -1,4 +1,4 @@
-require "data"
+require "globals"
 require "bootstrap"
 require "config"
 require "keymaps"

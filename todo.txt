@@ -7,14 +7,13 @@ toggleterm for git
 autoupdate of everything on startup
 prevent switching tabs in help window (nvim_buf_del_keymap())
 visual mode select for inserting braces around based on first brace
-system for overriding tab/spaces/indentation/[other options] options (project-specific ---> language-specific ---> default)
-!!!generelized array snippet for easier element inserting (also make editing possible)
 close help window fast
-remap fowrard and backwards buffer jump
-!!! remove nvimtree from jumplist
 smart hungry backspace (very hard problem)
-portal-nvim instead of vim's jumplist + go backwards motions
 insert eol from normal mode
+update on release
+disable cursor on linux level while focues on nvim
+skip second element of any pair with one key
+vertical line for different languages
 
 snippets:
   lua:
@@ -28,3 +27,7 @@ bindings:
   lsp config key
   telescope key
   copy paste
+
+hard problems:
+!!!generelized array snippet for easier element inserting (also make editing possible)
+

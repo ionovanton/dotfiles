@@ -14,4 +14,11 @@ M.wrap = function(func, ...)
   end
 end
 
+M.go_to_main_window = function()
+  local main_win_id = 1000
+  vim.api.nvim_set_current_win(main_win_id)
+end
+
+-- TODO: make ignore filetype function which takes ignored filetypes as argument
+
 return M

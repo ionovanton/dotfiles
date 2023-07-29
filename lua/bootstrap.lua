@@ -10,7 +10,6 @@ keymap = function(mode, key, binding, options)
   vim.keymap.set(mode, key, binding, options)
 end
 
-
 -- LAZY
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 

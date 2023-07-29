@@ -1,3 +1,5 @@
+local go_to_main_window = require("utils").go_to_main_window
+
 local opts = { noremap = true, silent = true }
 
 -- Disable arrow keys
@@ -18,10 +20,10 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<C-h>", ":keepjumps<CR><C-w>h", opts)
+keymap("n", "<C-j>", ":keepjumps<CR><C-w>j", opts)
+keymap("n", "<C-k>", ":keepjumps<CR><C-w>k", opts)
+keymap("n", "<C-l>", ":keepjumps<CR><C-w>l", opts)
 
 -- Move in insert mode
 keymap("i", "<C-h>", "<C-o>h", opts)
@@ -47,6 +49,26 @@ keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "<A-l>", "xp`[v`]", opts)
 keymap("v", "<A-h>", "xhp`[v`]", opts)
 
+-- Jumps only in main window
+vim.keymap.set("n", "<A-h>", function()
+  local cur_filetype = vim.o.filetype
+  if (cur_filetype == "NvimTree") then
+    go_to_main_window()
+  end
+  return "<C-o>"
+end, { noremap = true, silent = true, expr = true, })
+vim.keymap.set("n", "<A-l>", function()
+  local cur_filetype = vim.o.filetype
+  if (cur_filetype == "NvimTree") then
+    go_to_main_window()
+  end
+  return "<C-i>"
+end, { noremap = true, silent = true, expr = true, })
+
+-- Jump between buffers
+-- vim.keymap.set("n", "<A-l>", "<C-i>", { noremap = true, })
+-- vim.keymap.set("n", "<A-h>", "<C-o>", { noremap = true, })
+
 -- Toggle trailing characters
 keymap("n", "<leader>tlc", function()
   local tlc_on = {
@@ -70,12 +92,6 @@ keymap("n", "<leader>tlc", function()
   end
 end, { noremap = true, silent = true })
 
--- Buffer jumping 
--- (this will not work due to different workspaces, it will be mixed up. Every jump list should be separated in different sessions)
--- vim.cmd(":nnoremap <A-h> <C-o>")
--- vim.cmd(":nnoremap <A-l> <C-i>")
-
 -- Test
-keymap("n", "<leader>ttt", function() require("test") end, opts) -- TODO: fix
-
+keymap("n", "<leader>ttt", function() dofile("test") end, opts) -- TODO: fix ... apparently lua can't call one file multiple times
 

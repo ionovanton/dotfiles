@@ -1,7 +1,3 @@
-local autocmd = vim.api.nvim_create_autocmd
-local usercmd = vim.api.nvim_create_user_command
-local augroup = vim.api.nvim_create_augroup
-
 local set_vim_opts = function(t)
   for k, v in pairs(t) do
     vim.opt[k] = v
@@ -20,9 +16,26 @@ autocmd("BufEnter", {
   command = "set fo-=c fo-=r fo-=o",
 })
 
+-- Start with clean jumplist
+autocmd("VimEnter", {
+  pattern = "*",
+  command = "clearjumps",
+})
+
+-- Start with config directory, if one was not specified explicitly
+autocmd("VimEnter", {
+  pattern = "*",
+  callback = function()
+    local current_dir = vim.fn.getcwd()
+    local home_dir = vim.fn.expand("$HOME")
+    if (current_dir == home_dir) then
+      vim.cmd "cd $NVC"
+    end
+  end,
+})
+
 -- Smart hungry backspace
 -- TODO
-
 
 -- Default vim options
 local default_opts = {

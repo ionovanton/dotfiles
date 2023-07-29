@@ -60,8 +60,8 @@ local function on_attach(bufnr)
   -- keymap('n', '<2-RightMouse>', api.tree.change_root_to_node, opts('CD'))
 end
 
-keymap("n", "<C-n>", "<cmd> NvimTreeToggle <CR>", opts)
-keymap("n", "<leader>e", "<cmd> NvimTreeFocus <CR>", opts)
+keymap("n", "<C-n>", "<cmd>keepjumps NvimTreeToggle <CR>", opts)
+keymap("n", "<leader>e", "<cmd>keepjumps NvimTreeFocus <CR>", opts)
 
 require("nvim-tree").setup({
   on_attach = on_attach,
