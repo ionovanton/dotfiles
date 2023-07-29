@@ -1,19 +1,12 @@
 language driven options
   go
 null-ls
-change the color of leading listchars characters from blue to other
 jump-delete
 toggleterm for git
+lazygit
 autoupdate of everything on startup
-prevent switching tabs in help window (nvim_buf_del_keymap())
-visual mode select for inserting braces around based on first brace
 close help window fast
-smart hungry backspace (very hard problem)
-insert eol from normal mode
 update on release
-disable cursor on linux level while focues on nvim
-skip second element of any pair with one key
-vertical line for different languages
 
 snippets:
   lua:
@@ -30,4 +23,8 @@ bindings:
 
 hard problems:
 !!!generelized array snippet for easier element inserting (also make editing possible)
+smart hungry backspace
+disable cursor on linux level while focues on nvim
+skip second element of any pair with one key
+visual mode select for inserting braces around based on first brace
 

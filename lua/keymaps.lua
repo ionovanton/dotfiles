@@ -65,10 +65,6 @@ vim.keymap.set("n", "<A-l>", function()
   return "<C-i>"
 end, { noremap = true, silent = true, expr = true, })
 
--- Jump between buffers
--- vim.keymap.set("n", "<A-l>", "<C-i>", { noremap = true, })
--- vim.keymap.set("n", "<A-h>", "<C-o>", { noremap = true, })
-
 -- Toggle trailing characters
 keymap("n", "<leader>tlc", function()
   local tlc_on = {

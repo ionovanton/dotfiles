@@ -4,3 +4,6 @@ require("indent_blankline").setup{
   show_current_context = true,
 }
 
+vim.cmd "highlight IndentBlanklineChar guifg=Whitespace gui=nocombine"
+vim.cmd "highlight IndentBlanklineSpaceChar guifg=Whitespace gui=nocombine"
+
