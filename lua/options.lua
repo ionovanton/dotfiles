@@ -1,3 +1,5 @@
+local is_in = require "utils".is_in_table
+
 local set_vim_opts = function(t)
   for k, v in pairs(t) do
     vim.opt[k] = v
@@ -31,6 +33,18 @@ autocmd("VimEnter", {
     local desktop_dir = home_dir .. "/Desktop"
     if (current_dir == home_dir or current_dir == desktop_dir) then
       vim.cmd "cd $NVC"
+    end
+  end,
+})
+
+-- Leave Mason or Lazy on 'q'
+autocmd("BufEnter", {
+  pattern = "*",
+  callback = function()
+    local cur_ft = vim.o.filetype
+    local ignore = { "lazy", "mason", }
+    if is_in(cur_ft, ignore) then
+      vim.keymap.set("n", "q", "<cmd>q<CR>", { noremap = true, silent = true })
     end
   end,
 })

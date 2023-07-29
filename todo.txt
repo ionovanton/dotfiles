@@ -6,6 +6,7 @@ toggleterm + lazygit
 autoupdate of everything on startup
 close help window fast
 update on release
+leave mason and Lazy on 'q'
 
 snippets:
   lua:
