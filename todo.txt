@@ -2,8 +2,7 @@ language driven options
   go
 null-ls
 jump-delete
-toggleterm for git
-lazygit
+toggleterm + lazygit
 autoupdate of everything on startup
 close help window fast
 update on release

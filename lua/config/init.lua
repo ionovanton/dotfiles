@@ -1,14 +1,22 @@
 -- TODO: list all files and require them with for loop
 
-require "config.autopairs"
-require "config.bufferline"
-require "config.catppuccin"
-require "config.cmp"
-require "config.comment"
-require "config.indent-blankline"
-require "config.lspconfig"
-require "config.lualine"
-require "config.mason"
-require "config.nvim-tree"
-require "config.surround"
-require "config.treesitter"
+local plugins = {
+  "autopairs",
+  "bufferline",
+  "catppuccin",
+  "cmp",
+  "comment",
+  "indent-blankline",
+  "lazygit",
+  "lspconfig",
+  "lualine",
+  "mason",
+  "nvim-tree",
+  "surround",
+  "toggleterm",
+  "treesitter",
+}
+
+for _, v in ipairs(plugins) do
+  require("config." .. v)
+end

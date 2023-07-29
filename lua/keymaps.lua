@@ -52,15 +52,19 @@ keymap("v", "<A-h>", "xhp`[v`]", opts)
 -- Jumps only in main window
 vim.keymap.set("n", "<A-h>", function()
   local cur_filetype = vim.o.filetype
+  local skip = "<cmd><CR>"
   if (cur_filetype == "NvimTree") then
     go_to_main_window()
+    return skip
   end
   return "<C-o>"
 end, { noremap = true, silent = true, expr = true, })
 vim.keymap.set("n", "<A-l>", function()
   local cur_filetype = vim.o.filetype
+  local skip = "<cmd><CR>"
   if (cur_filetype == "NvimTree") then
     go_to_main_window()
+    return skip
   end
   return "<C-i>"
 end, { noremap = true, silent = true, expr = true, })
