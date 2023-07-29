@@ -10,3 +10,4 @@ function lazygit_toggle()
 end
 
 vim.keymap.set("n", "<leader>git", "<cmd>lua lazygit_toggle()<CR>", {noremap = true, silent = true})
+

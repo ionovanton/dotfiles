@@ -28,7 +28,8 @@ autocmd("VimEnter", {
   callback = function()
     local current_dir = vim.fn.getcwd()
     local home_dir = vim.fn.expand("$HOME")
-    if (current_dir == home_dir) then
+    local desktop_dir = home_dir .. "/Desktop"
+    if (current_dir == home_dir or current_dir == desktop_dir) then
       vim.cmd "cd $NVC"
     end
   end,

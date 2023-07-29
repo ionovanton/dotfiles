@@ -19,25 +19,26 @@ require("bufferline").setup({
 })
 
 local go_to_main_window = require("utils").go_to_main_window
+local is_in = require("utils").is_in_table
 local debug_log = require("utils").debug_log
 local wrap = require("utils").wrap
 
 -- Switch between buffers
 keymap("n", "<S-l>",
 function()
-  if (vim.o.filetype == "NvimTree") then
-    go_to_main_window()
-    return "<cmd><CR>"
+  local ignore = { "NvimTree", "help", }
+  if (is_in(vim.o.filetype, ignore)) then
+    return cmd_main_win
   end
-  return ":bnext<CR>"
+  return "<cmd>bnext<CR>"
 end, {silent = true, expr = true})
 keymap("n", "<S-h>",
 function()
-  if (vim.o.filetype == "NvimTree") then
-    go_to_main_window()
-    return "<cmd><CR>"
+  local ignore = { "NvimTree", "help", }
+  if (is_in(vim.o.filetype, ignore)) then
+    return cmd_main_win
   end
-  return ":bprevious<CR>"
+  return "<cmd>bprevious<CR>"
 end, {silent = true, expr = true})
 
 -- Close buffers

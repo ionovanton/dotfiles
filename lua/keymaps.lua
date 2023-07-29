@@ -1,4 +1,5 @@
 local go_to_main_window = require("utils").go_to_main_window
+local is_in = require("utils").is_in_table
 
 local opts = { noremap = true, silent = true }
 
@@ -51,25 +52,23 @@ keymap("v", "<A-h>", "xhp`[v`]", opts)
 
 -- Jumps only in main window
 vim.keymap.set("n", "<A-h>", function()
-  local cur_filetype = vim.o.filetype
-  local skip = "<cmd><CR>"
-  if (cur_filetype == "NvimTree") then
-    go_to_main_window()
-    return skip
+  local ignore = { "NvimTree", }
+  local skip = "<cmd>keepjumps"
+  if (is_in(vim.o.filetype, ignore)) then
+    return cmd_main_win
   end
   return "<C-o>"
 end, { noremap = true, silent = true, expr = true, })
 vim.keymap.set("n", "<A-l>", function()
-  local cur_filetype = vim.o.filetype
-  local skip = "<cmd><CR>"
-  if (cur_filetype == "NvimTree") then
-    go_to_main_window()
-    return skip
+  local ignore = { "NvimTree", }
+  local skip = "<cmd>keepjumps"
+  if (is_in(vim.o.filetype, ignore)) then
+    return cmd_main_win
   end
   return "<C-i>"
 end, { noremap = true, silent = true, expr = true, })
 
--- Toggle trailing characters
+-- Toggle charlist
 keymap("n", "<leader>tlc", function()
   local tlc_on = {
     tab = '→ ',
@@ -92,6 +91,18 @@ keymap("n", "<leader>tlc", function()
   end
 end, { noremap = true, silent = true })
 
+-- Debug
+keymap("n", "<leader>dbgwl", function()
+  local wins = vim.api.nvim_list_wins()
+  local result = ""
+  for _, v in ipairs(wins) do
+    result = v .. " " .. result
+  end
+  print(result)
+end, { noremap = true, expr = true, })
+
 -- Test
-keymap("n", "<leader>ttt", function() dofile("test") end, opts) -- TODO: fix ... apparently lua can't call one file multiple times
+keymap("n", "<leader>ttt", function()
+  vim.cmd ""
+end, { noremap = true, expr = true, })
 

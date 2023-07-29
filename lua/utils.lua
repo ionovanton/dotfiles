@@ -19,6 +19,13 @@ M.go_to_main_window = function()
   vim.api.nvim_set_current_win(main_win_id)
 end
 
--- TODO: make ignore filetype function which takes ignored filetypes as argument
+M.is_in_table = function(x, input)
+  for _, i in pairs(input) do
+    if i == x then
+      return true
+    end
+  end
+  return false
+end
 
 return M
