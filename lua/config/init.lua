@@ -7,7 +7,6 @@ local plugins = {
   "cmp",
   "comment",
   "indent-blankline",
-  "lazygit",
   "lspconfig",
   "lualine",
   "mason",

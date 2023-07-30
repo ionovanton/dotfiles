@@ -1,12 +1,11 @@
 language driven options
   go
 null-ls
-jump-delete
-toggleterm + lazygit
+toggleterm
 autoupdate of everything on startup
 close help window fast
 update on release
-leave mason and Lazy on 'q'
+always show trailing spaces
 
 snippets:
   lua:

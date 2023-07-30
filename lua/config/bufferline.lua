@@ -42,8 +42,7 @@ function()
 end, {silent = true, expr = true})
 
 -- Close buffers
-keymap("n", "<leader>bcc", ":bd % | :bnext<CR>", opts)
-keymap("n", "<leader>bca", ":bd % | :BufferLineCloseOthers<CR>", opts)
+keymap("n", "<leader>bcc", ":bd % | :bnext<CR>", opts) -- TODO: if this is the last buffer in window, do nothing
 keymap("n", "<leader>bco", ":BufferLineCloseOthers<CR>", opts)
 keymap("n", "<leader>bcr", ":BufferLineCloseRight<CR>", opts)
 keymap("n", "<leader>bcl", ":BufferLineCloseLeft<CR>", opts)

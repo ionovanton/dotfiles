@@ -50,6 +50,10 @@ keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "<A-l>", "xp`[v`]", opts)
 keymap("v", "<A-h>", "xhp`[v`]", opts)
 
+-- Update Mason/Lazy
+-- leader um
+-- leader ul
+
 -- Jumps only in main window
 vim.keymap.set("n", "<A-h>", function()
   local ignore = { "NvimTree", }

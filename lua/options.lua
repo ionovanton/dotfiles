@@ -92,7 +92,7 @@ augroup("ProjectSettings", {})
 
 local custom_opts = {
   {
-    name = "FileType",
+    event = "FileType",
     group = "LanguageSettings",
     default = false,
     pattern = "lua",
@@ -115,7 +115,7 @@ set_vim_opts(default_opts)
 -- Custom options
 for _, t in ipairs(custom_opts) do
   if (t.default == false) then
-    autocmd(t.name, {
+    autocmd(t.event, {
       group = t.group,
       pattern = t.pattern,
       callback = t.callback,
