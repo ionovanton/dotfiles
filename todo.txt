@@ -1,29 +1,26 @@
 language driven options
   go
-null-ls
-toggleterm
-autoupdate of everything on startup
-close help window fast
-update on release
-always show trailing spaces
+telescope
+find all classes in project
+find all functions/methods in file (also show their signature)
+live grep across all commits (git log -Skey_word)
+
+
+cmp
 
 snippets:
   lua:
     keymap
 
-setting up
-  telescope
-  cmp
-
-bindings:
-  lsp config key
-  telescope key
-  copy paste
-
 hard problems:
+close help window fast
 !!!generelized array snippet for easier element inserting (also make editing possible)
 smart hungry backspace
 disable cursor on linux level while focues on nvim
 skip second element of any pair with one key
 visual mode select for inserting braces around based on first brace
+
+minor promlems:
+autoupdate of everything on startup
+update on release
 

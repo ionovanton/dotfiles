@@ -84,6 +84,9 @@ local default_opts = {
   expandtab = true, -- convert tabs to spaces when pressed
   shiftwidth = 2,
   tabstop = 2,
+  listchars = {
+    trail = '⋅',
+  },
 }
 
 -- Option overriding

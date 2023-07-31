@@ -26,7 +26,6 @@ function bottom_terminal_toggle()
 end
 
 bottom_terminal_toggle_cmd = "<cmd>keepjumps lua bottom_terminal_toggle()<CR>"
-
 vim.keymap.set( "n", "<C-t>", bottom_terminal_toggle_cmd, { noremap = true, silent = true, })
 
 function set_toggleterm_keymaps()
@@ -40,9 +39,4 @@ function set_toggleterm_keymaps()
 end
 
 vim.cmd("autocmd! TermOpen term://*toggleterm#* keepjumps lua set_toggleterm_keymaps()")
-
--- autocmd("TermOpen", {
---   pattern = "term://*",
---   command = "<cmd>set ma<CR> | lua set_toggleterm_keymaps()<CR>",
--- })
 

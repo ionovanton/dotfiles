@@ -12,6 +12,7 @@ local plugins = {
   "mason",
   "nvim-tree",
   "surround",
+  "telescope",
   "toggleterm",
   "treesitter",
 }

@@ -51,7 +51,8 @@ keymap("v", "<A-l>", "xp`[v`]", opts)
 keymap("v", "<A-h>", "xhp`[v`]", opts)
 
 -- Update Mason/Lazy
--- leader um
+keymap("n", "<leader>ul", "<cmd>Lazy update<CR>", opts)
+keymap("n", "<leader>um", "<cmd>MasonUpdate<CR>", opts)
 -- leader ul
 
 -- Jumps only in main window
@@ -78,12 +79,14 @@ keymap("n", "<leader>tlc", function()
     tab = '→ ',
     lead = '⋅',
     eol = '↴',
+    trail = '⋅',
   }
 
   local tlc_off = {
     tab = '',
     lead = '',
     eol = '',
+    trail = '⋅',
   }
 
   if (tlc_toggle == false) then
