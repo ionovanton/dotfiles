@@ -83,9 +83,9 @@ keymap("n", "<leader>tlc", function()
   }
 
   local tlc_off = {
-    tab = '',
-    lead = '',
-    eol = '',
+    tab = '  ',
+    lead = ' ',
+    eol = ' ',
     trail = '⋅',
   }
 
@@ -93,7 +93,7 @@ keymap("n", "<leader>tlc", function()
     vim.opt["listchars"] = tlc_on
     tlc_toggle = true
   else
-    vim.opt["listchars"] = nil
+    vim.opt["listchars"] = tlc_off
     tlc_toggle = false
   end
 end, { noremap = true, silent = true })

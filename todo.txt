@@ -1,10 +1,10 @@
 language driven options
   go
 telescope
-find all classes in project
-find all functions/methods in file (also show their signature)
+gitsigns
+find all types/files/symbols
+file structure
 live grep across all commits (git log -Skey_word)
-
 
 cmp
 
@@ -21,6 +21,6 @@ skip second element of any pair with one key
 visual mode select for inserting braces around based on first brace
 
 minor promlems:
-autoupdate of everything on startup
+autoupdate everything on startup
 update on release
 

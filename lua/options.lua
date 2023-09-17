@@ -52,6 +52,11 @@ autocmd("BufEnter", {
 -- Smart hungry backspace
 -- TODO
 
+default_listchars = {
+  trail = '⋅',
+  tab = '   ',
+}
+
 -- Default vim options
 local default_opts = {
   backup = false,
@@ -84,9 +89,7 @@ local default_opts = {
   expandtab = true, -- convert tabs to spaces when pressed
   shiftwidth = 2,
   tabstop = 2,
-  listchars = {
-    trail = '⋅',
-  },
+  listchars = default_listchars,
 }
 
 -- Option overriding
@@ -104,6 +107,25 @@ local custom_opts = {
         expandtab = true,
         shiftwidth = 2,
         tabstop = 2,
+      }
+      for k, v in pairs(vim_opts) do
+        vim.opt[k] = v
+      end
+    end,
+  },
+  {
+    event = "FileType",
+    group = "LanguageSettings",
+    default = false,
+    pattern = "go",
+    callback = function(_)
+      local vim_opts = {
+        expandtab = false,
+        shiftwidth = 4,
+        tabstop = 4,
+        listchars = {
+          tab = '→  '
+        },
       }
       for k, v in pairs(vim_opts) do
         vim.opt[k] = v

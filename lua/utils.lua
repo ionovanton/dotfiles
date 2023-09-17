@@ -28,4 +28,16 @@ M.is_in_table = function(x, input)
   return false
 end
 
+M.table_merge = function(x, y)
+  local result = {}
+  for _, TableChild in pairs(x) do
+    table.insert(result, x)
+  end
+
+  for _, TableChild in pairs(y) do
+    table.insert(result, y)
+  end
+  return result
+end
+
 return M
