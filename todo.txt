@@ -2,9 +2,12 @@ language driven options
   go
 telescope
 gitsigns
+  move between hunks
 find all types/files/symbols
 file structure
 live grep across all commits (git log -Skey_word)
+set wrap text on readme/md/txt etc (set wrap and set linebreak)
+nvim-dap
 
 cmp
 

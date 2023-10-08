@@ -85,7 +85,7 @@ local default_opts = {
   sidescrolloff = 8,
   list = true,
   termguicolors = true,
-  showtabline = 2, -- show opened tabs (pages) on top of the screen
+  showtabline = 2,  -- show opened tabs (pages) on top of the screen
   expandtab = true, -- convert tabs to spaces when pressed
   shiftwidth = 2,
   tabstop = 2,
@@ -132,6 +132,25 @@ local custom_opts = {
       end
     end,
   },
+  {
+    event = "FileType",
+    group = "LanguageSettings",
+    default = false,
+    pattern = "yml",
+    callback = function(_)
+      local vim_opts = {
+        expandtab = true,
+        shiftwidth = 2,
+        tabstop = 2,
+        listchars = {
+          tab = '    '
+        },
+      }
+      for k, v in pairs(vim_opts) do
+        vim.opt[k] = v
+      end
+    end,
+  },
 }
 
 -- Default options
@@ -147,4 +166,3 @@ for _, t in ipairs(custom_opts) do
     })
   end
 end
-

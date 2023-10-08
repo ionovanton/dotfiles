@@ -1,9 +1,9 @@
 require("nvim-treesitter.configs").setup({
   run = ":TSUpdate",
   sync_install = false,
-    ensure_installed = { "go", },
-    auto_install = true,
-    highlight = {
+  ensure_installed = { "go", },
+  auto_install = true,
+  highlight = {
     enable = true,
   },
   indent = {
@@ -13,3 +13,4 @@ require("nvim-treesitter.configs").setup({
     enable = true,
   },
 })
+

@@ -13,18 +13,19 @@ cmp.setup({
     ['<esc>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   }),
-	window = {
-		completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
+  completion = {
+    completeopt = 'menu,menuone,noinsert', -- Always hightlight the first option
+  },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.disable,
   },
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-  },
-  {
-    { name = "path" },
-    { name = 'buffer' },
-  })
+      { name = 'nvim_lsp' },
+      { name = 'luasnip' },
+    },
+    {
+      { name = "path" },
+      { name = 'buffer' },
+    })
 })
-
-

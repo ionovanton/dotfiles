@@ -53,7 +53,9 @@ keymap("v", "<A-h>", "xhp`[v`]", opts)
 -- Update Mason/Lazy
 keymap("n", "<leader>ul", "<cmd>Lazy update<CR>", opts)
 keymap("n", "<leader>um", "<cmd>MasonUpdate<CR>", opts)
--- leader ul
+
+-- Demap 'q' in order to prevent nvim-cmp from crashing
+keymap("n", "q", "", {})
 
 -- Jumps only in main window
 vim.keymap.set("n", "<A-h>", function()
@@ -112,4 +114,3 @@ end, { noremap = true, expr = true, })
 keymap("n", "<leader>ttt", function()
   vim.cmd ""
 end, { noremap = true, expr = true, })
-

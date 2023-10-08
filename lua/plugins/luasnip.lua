@@ -3,3 +3,4 @@ return {
   name = "luasnip",
   dependencies = { "friendly-snippets" },
 }
+
